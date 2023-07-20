@@ -1,0 +1,134 @@
+body{
+    background-color: #d8e1fa;
+   
+}
+.card{
+    background-color:#0b1e52;
+    color:white;
+    padding:20px;
+    margin:10vh;
+    border-radius:15px;
+    display:block;
+    height:70vh;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.99);
+      
+    
+}
+
+
+.card-header{
+    
+    padding:30px;
+    font-size: 60px;
+    background-image: url('https://static.tildacdn.com/tild3663-3131-4663-b866-376630323139/Logo.svg');
+    background-repeat: no-repeat;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 80px;
+    
+}
+
+.card-title{
+    font-size: 35px;
+}
+.card-text{
+    font-size: 25px;
+    margin-bottom: 70px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.99);
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    padding: 1vh;
+   
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 10px;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  input{
+    width: 70%;
+    padding: 1vh;
+    height: 7vh;
+    border-radius: 10px;
+    border:none;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.99);
+  }
+
+  button{
+    height: 5%;
+    border-radius: 10px;
+    padding: 1vh;
+    height: 7vh;
+    border:none;
+  }
+
+  .card {
+    margin: 10px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.dropbtn {
+    margin-top: 10px;
+}
+
+.dropdown-content {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
+.dropdown-content a {
+    width: 100%;
+}
+
+button {
+    margin-top: 10px;
+}
+
+@media (max-width: 576px) {
+    /* Styles for small devices like iPhones */
+    .card-body {
+        padding: 10px;
+    }
+}
+
+.btn {
+    font-size: 24px; /* Increase font size for buttons */
+    border-radius: 8px; /* Apply rounded corners to buttons */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Change button color */
+    color: #fff; /* Change button text color */
+    border: none; /* Remove button border */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Change button color on hover */
+}
+

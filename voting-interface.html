@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <title>RESPUBLIKA VOTE 2023</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <script lang="text/javascript" src="https://cdn.ably.io/lib/ably.min-1.js"></script>      
+        <script lang="text/javascript" src="https://cdn.ably.com/lib/ably.min-1.js"></script>
+       <link rel="stylesheet" href="style.css" />
+       <link rel="stylesheet" href="auto.html" />
+       
+    </head>
+    
+    <body >
+        <div style="text-align: center; padding: 6%;" >
+            <div class='card h-100'>
+              <div class="card-header"></div>
+              <div class="card-body" >
+                <h5 class="card-title" id="question"  onclick="redirect()">ASPANDAGY AIDY ALU MUMKIN BE?</h5>
+                
+                    <button id="cc-btn" type="button" class="btn btn-light btn-vote-option" onclick="castVote('1')">Ия</button>
+                    <button id="tt-btn" type="button" class="btn btn-light btn-vote-option" onclick="castVote('2')">Жоқ</button>
+                    <button id="mm-btn" type="button" class="btn btn-light btn-vote-option" onclick="castVote('3')">Қалыс қаламын</button>
+                    
+              </div>
+            </div>
+        </div>
+    </body>
+
+    <script>
+
+    //adding array of questions
+
+    let questionElement = document.getElementById('question')
+    let button1=document.getElementById('cc-btn')
+    let button2=document.getElementById('tt-btn')
+    let button3=document.getElementById('mm-btn')
+    var questions=[
+        "Партияның Жарғысына өзгерістер мен толықтырулар енгізу.",
+"Партия Орталық кеңесінің жаңа құрамын бекіту.",
+"Партия Орталық бақылау-тексеру комиссиясы туралы ережені бекіту.",
+"Партия Орталық бақылау-тексеру комиссиясының құрамын бекіту.",
+"Respublica” партиясының жастар қанатын құру"
+    ];
+
+    var currentQuestionIndex = 0;
+
+    questionElement.textContent = questions[currentQuestionIndex]
+
+    button1.addEventListener('click',function(){
+        displayNextQuestion()
+    })
+    button2.addEventListener('click',function(){
+        displayNextQuestion()
+    })
+    button3.addEventListener('click',function(){
+        displayNextQuestion()
+    })
+
+    function displayNextQuestion() {
+      currentQuestionIndex++;
+      if (currentQuestionIndex >= questions.length) {
+        questionElement.textContent = 'Дауыс бергеніңізге көп рахмет!';
+       
+        button1.style.display = 'none';
+        button2.style.display = 'none';
+        button3.style.display = 'none';
+        
+      } else {
+        questionElement.textContent = questions[currentQuestionIndex];
+      }
+    }
+
+        var realtime = new Ably.Realtime({key:'RyEsHw.9rXuqA:8klbRNdfWxa50lJxvAkBiD8N55FtwXHA-7InmSUaO7E'});
+        var myVotingChannel = realtime.channels.get('voting-channel')
+        
+        var castVote =function(choice){
+            myVotingChannel.publish('vote', choice, (err)=>{
+                console.log(err)
+                console.log(choice)
+            });
+        }
+
+
+        // artka=()=>{
+        //                 window.location.href="auto.html"
+        //               }
+
+        const redirect = ()=>{
+            let currentQuestion = questionElement.textContent.trim();
+            currentQuestion === 'Дауыс бергеніңізге көп рахмет!'? (window.location.href = 'auto.html') : null;
+
+        }
+    </script>
+</html>

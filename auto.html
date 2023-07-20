@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <title>Voting interface</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <script lang="text/javascript" src="https://cdn.ably.io/lib/ably.min-1.js"></script>      
+        <script lang="text/javascript" src="https://cdn.ably.com/lib/ably.min-1.js"></script>
+       <!-- <link rel="stylesheet" href="style.css" /> -->
+       <link rel="stylesheet" href="voting-interface.html" />
+       <link rel="stylesheet" href="auto.css" />
+    </head>
+    
+    <body>
+        <div style="text-align: center; padding: 6%;">
+            <div onClick="artka" class='card'>
+              <div class="card-header"></div>
+              <div class="card-body">
+                <h1>Qosh qeldiniz!</h1>
+                <input type="text" placeholder="Aty-zhoniniz" required/>
+                <div class="dropdown">
+                    <button class="dropbtn" id="selectedCityBtn">Qala</button>
+                    <div class="dropdown-content">
+                      <a href="#">Almaty</a>
+                      <a href="#">Astana</a>
+                      <a href="#">Shymkent</a>
+                      <a href="#">Karaganda</a>
+                      <a href="#">Aktobe</a>
+                      <a href="#">Taraz</a>
+                      <a href="#">Pavlodar</a>
+                      <a href="#">Ust-Kamenogorsk</a>
+                      <a href="#">Semey</a>
+                      <a href="#">Kostanay</a>
+                      <a href="#">Petropavl</a>
+                      <a href="#">Oral</a>
+
+
+                    </div>
+                   
+                    <script>
+                        let selectedCity="";
+                        document.querySelectorAll('.dropdown-contend,a').forEach(function(element){
+                            element.addEventListener('click',function(){
+                                selectedCity = this.innerHTML;
+                                document.getElementById("selectedCityBtn").innerHTML = selectedCity
+                            })
+                        })
+
+                      Bas=()=>{
+                        window.location.href="voting-interface.html"
+                      }
+
+                      artka=()=>{
+                        window.location.href="auto.html"
+                      }
+                      </script>
+              </div>
+              <button onClick="Bas()">Kelesy</button>
+            </div>
+        </div>
+    </body>

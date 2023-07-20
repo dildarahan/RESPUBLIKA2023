@@ -1,0 +1,121 @@
+body{
+    background-color: #d8e1fa;
+}
+.card{
+    background-color:#0b1e52;
+    color:white;
+    padding:20px;
+    margin:10vh;
+    border-radius:15px;
+    display:block;
+    height:70vh;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.99);
+ 
+}
+
+.card-header{
+    
+    padding:30px;
+    font-size: 60px;
+    background-image: url('https://static.tildacdn.com/tild3663-3131-4663-b866-376630323139/Logo.svg');
+    background-repeat: no-repeat;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 80px;
+    
+}
+
+.card-title{
+    font-size: 35px;
+}
+.card-text{
+    font-size: 25px;
+    margin-bottom: 70px;
+}
+
+button{
+    width:20%;
+    
+    height:20% ;
+    font-size:30px;
+    
+}
+.btn-light btn-vote-option{
+    font-size:30px;
+}
+
+@media only screen
+and (max-device-width: 499px)
+and (device-height: 844px)
+and (-webkit-device-pixel-ratio: 3) {
+.card {
+    margin: 5vh;
+}
+
+.card-header {
+    font-size: 40px;
+    margin-bottom: 60px;
+}
+
+.card-title {
+    font-size: 25px;
+}
+
+.card-text {
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+button {
+    width: 40%;
+    height: 30%;
+    font-size: 10px;
+    position: relative;
+    display: flex;
+}
+}
+
+
+.card {
+    margin: 10px;
+    width: 100%;
+}
+
+.card-body {
+    padding: 20px;
+    height: 100%; /* Ensure the card body takes all available height */
+}
+
+.btn-vote-option {
+    margin: 5px;
+}
+
+@media (max-width: 576px) {
+    /* Styles for small devices like iPhones */
+    .card-body {
+        padding: 10px;
+    }
+
+    /* Buttons in one column for small devices */
+    .btn-vote-option {
+        display: block;
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+
+.btn {
+    font-size: 24px; /* Increase font size for buttons */
+    border-radius: 8px; /* Apply rounded corners to buttons */
+}
+
+.btn-primary {
+    background-color: #007bff; /* Change button color */
+    color: #fff; /* Change button text color */
+    border: none; /* Remove button border */
+}
+
+.btn-primary:hover {
+    background-color:#0b1e52; /* Change button color on hover */
+}
